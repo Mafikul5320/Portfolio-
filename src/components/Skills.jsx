@@ -86,9 +86,9 @@ const Skills = () => {
         description: 'NoSQL database'
       },
       {
-        name: 'PostgreSQL',
+        name: 'Firebase',
         icon: <img src="https://skillicons.dev/icons?i=firebase" height={75} width={75} />,
-        description: 'Relational database'
+        description: 'Backend-as-a-Service platform'
       },
     ],
     tools: [
@@ -124,11 +124,7 @@ const Skills = () => {
         icon: <img src="https://skillicons.dev/icons?i=netlify" height={75} width={75} />,
         description: 'Web hosting service'
       },
-      {
-        name: 'Firebase',
-        icon: <img src="https://skillicons.dev/icons?i=firebase" height={75} width={75} />,
-        description: 'Backend-as-a-Service platform'
-      },
+      
     ]
   };
 

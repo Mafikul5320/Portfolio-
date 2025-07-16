@@ -17,11 +17,11 @@ const Footer = () => {
             Let’s build something amazing together!
           </p>
           <div className="flex gap-3 mt-4">
-            <a href="#"><Linkedin className="w-5 h-5 text-blue-500 hover:scale-110" /></a>
-            <a href="#"><Github className="w-5 h-5 hover:scale-110" /></a>
-            <a href="#"><Facebook className="w-5 h-5 text-blue-600 hover:scale-110" /></a>
-            <a href="#"><Instagram className="w-5 h-5 text-red-500 hover:scale-110" /></a>
-            <a href="#"><X className="w-5 h-5 hover:scale-110" /></a>
+            <a href="https://www.linkedin.com/in/mafikulislam/"><Linkedin className="w-5 h-5 text-blue-500 hover:scale-110" /></a>
+            <a href="https://github.com/Mafikul5320"><Github className="w-5 h-5 hover:scale-110" /></a>
+            <a href="https://www.facebook.com/mdmafikul.islam.3388"><Facebook className="w-5 h-5 text-blue-600 hover:scale-110" /></a>
+            {/* <a href="#"><Instagram className="w-5 h-5 text-red-500 hover:scale-110" /></a>
+            <a href="#"><X className="w-5 h-5 hover:scale-110" /></a> */}
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
             <p className="flex items-center gap-2"><Mail className="w-4 h-4" /> mdmafikulislam5320@gmail.com</p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> +880 1905-830727</p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> +880 1796-048427</p>
-            <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Uttra, Dhaka, Bangladesh</p>
+            <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Uttara, Dhaka, Bangladesh</p>
           </div>
           <div className="mt-4 flex items-center bg-gray-800 px-2 py-1 rounded">
             <input

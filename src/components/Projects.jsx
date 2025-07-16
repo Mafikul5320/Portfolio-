@@ -15,7 +15,7 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       description: 'BookClub is a full-stack web application built for hobbyists and enthusiasts to connect, discover, and create local interest-based groups such as book clubs, art circles, or hiking teams. This project encourages meaningful community engagement around shared passions through a modern, responsive, and secure platform.',
       liveUrl: 'https://assignment-10-6f52b.web.app',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Mafikul5320/BookClub-Client',
       challenges: [
         ' Preventing Duplicate Book Borrowing',
         ' Real-Time Quantity Management',
@@ -39,7 +39,7 @@ const Projects = () => {
       tech: ['React', 'Firebase', 'Node.js', 'JWT'],
       description: 'LibraryLoop is a full-stack web application designed for seamless library operations in educational institutions. Built with modern web technologies, the platform enables admins and users to manage books, track borrow/return activity, and explore categorized book collections efficiently. With a clean and responsive UI, JWT-secured routes, and animated user experience, LibraryLoop brings library management into the digital era.',
       liveUrl: 'https://assignment-11-8f2e3.web.app',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Mafikul5320/LibraryLoop-Client',
       challenges: [
         'Implementing real-time video calling functionality',
         'Building a robust scheduling system',
@@ -63,7 +63,7 @@ const Projects = () => {
       tech: ['React', 'Node.js'],
       description: 'A comprehensive online bookstore featuring advanced search capabilities, personalized recommendations, user reviews, wishlist functionality, and secure checkout process. Includes both physical and digital book sales.',
       liveUrl: 'https://assigment-9-eb6e9.web.app',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Mafikul5320/Pool-Cleaning-Solutions',
       challenges: [
         'Implementing advanced search with filters',
         'Building recommendation algorithm',

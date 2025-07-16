@@ -55,9 +55,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'mdmafikulislam5320@gmail.com',
+      value: 'mdmafikul.islam53@gmail.com',
       description: 'Send me an email anytime',
-      href: 'mailto:shakil@example.com',
+      href: 'mailto:mdmafikul.islam53@gmail.com',
       color: 'from-blue-500 to-cyan-500',
       available: ''
     },
@@ -66,7 +66,7 @@ const Contact = () => {
       title: 'Phone',
       value: '+8801796048427',
       description: 'Call me for urgent matters',
-      href: 'tel:+15551234567',
+      href: 'tel:+8801796048427',
       color: 'from-green-500 to-teal-500',
       available: ''
     },
@@ -100,10 +100,10 @@ const Contact = () => {
   ];
 
   const budgetRanges = [
-    '$5K - $10K',
-    '$10K - $25K',
-    '$25K - $50K',
-    '$50K+'
+    '$100 - $200',
+    '$200 - $300',
+    '$300 - $350',
+    '$500'
   ];
 
   const timelines = [

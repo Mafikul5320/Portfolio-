@@ -78,15 +78,15 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <MapPin className="h-5 w-5 text-purple-500" />
-                    <span className="text-gray-700 dark:text-gray-300">San Uttra, Dhaka</span>
+                    <span className="text-gray-700 dark:text-gray-300">Uttara, Dhaka</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-purple-500" />
-                    <span className="text-gray-700 dark:text-gray-300">mdmafikulislam5320@gmail.com</span>
+                    <span className="text-gray-700 dark:text-gray-300">mdmafikul.islam53@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Code className="h-5 w-5 text-purple-500" />
-                    <span className="text-gray-700 dark:text-gray-300">Frontend Developer</span>
+                    <strong className="text-gray-700 dark:text-gray-300">Frontend Developer</strong>
                   </div>
                 </div>
               </div>
@@ -117,10 +117,10 @@ const About = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-white/80 dark:bg-gray-800/80 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-700/80 px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+              <a href="mailto:mdmafikul.islam53@gmail.com?subject=Job Opportunity&body=Hello Mafikul, I saw your portfolio and would like to discuss a job opportunity." className="bg-white/80 dark:bg-gray-800/80 shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-700/80 px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
                 <Mail className="h-5 w-5" />
                 <span>Get In Touch</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
