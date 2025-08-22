@@ -5,37 +5,14 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    {
-      id: 1,
-      title: 'BookClub – A Social Platform for Hobby-Based Communities',
-      shortDescription: 'BookClub is a hobby-based social platform where users can create, join, and manage interest-driven community groups.',
-      image: 'https://i.ibb.co/JRynpyxz/Screenshot-2025-06-30-004435.jpg',
-      tags: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB',],
-      category: 'Fullstack',
-      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-      description: 'BookClub is a full-stack web application built for hobbyists and enthusiasts to connect, discover, and create local interest-based groups such as book clubs, art circles, or hiking teams. This project encourages meaningful community engagement around shared passions through a modern, responsive, and secure platform.',
-      liveUrl: 'https://assignment-10-6f52b.web.app',
-      githubUrl: 'https://github.com/Mafikul5320/BookClub-Client',
-      challenges: [
-        ' Preventing Duplicate Book Borrowing',
-        ' Real-Time Quantity Management',
-        'Dynamic Toggle & Filter System',
-        ' Implementing JWT with Firebase Auth'
-      ],
-      improvements: [
-        'Admin Roles & Permissions – Add role-based access for better permission control.',
-        ' Email Reminders – Notify users about upcoming return deadlines.',
-        ' Discussion Board – Allow readers to discuss books or reviews.',
-        ' Email Notifications &  User Profile Customization'
-      ]
-    },
+
     {
       id: 2,
-      title: 'LibraryLoop – Smart Library Management System for Schools',
-      shortDescription: 'LibraryLoop is a smart library system for managing, browsing, and borrowing books online.',
-      image: 'https://i.ibb.co/xS1Xxygz/Screenshot-2025-06-30-010751.jpg',
-      tags: ['React', 'Firebase', 'Node.js', 'JWT'],
-      category: 'Fullstack',
+      title: 'LibraryLoop – Smart Library Management System ',
+      shortDescription: 'LibraryLoop is a full-stack online library platform with AI-powered summaries, personalized recommendations, and book borrowing/return management.',
+      image: 'https://i.ibb.co.com/sdpds1db/image.png',
+      tags: ['React', 'Firebase', 'Node.js', 'JWT',"Tailwind CSS","Express.js"],
+      category: ' Full-Stack',
       tech: ['React', 'Firebase', 'Node.js', 'JWT'],
       description: 'LibraryLoop is a full-stack web application designed for seamless library operations in educational institutions. Built with modern web technologies, the platform enables admins and users to manage books, track borrow/return activity, and explore categorized book collections efficiently. With a clean and responsive UI, JWT-secured routes, and animated user experience, LibraryLoop brings library management into the digital era.',
       liveUrl: 'https://assignment-11-8f2e3.web.app',
@@ -51,6 +28,30 @@ const Projects = () => {
         'Implement group tutoring sessions',
         'Add mobile app for better accessibility',
         'Create assessment and quiz features'
+      ]
+    },
+        {
+      id: 1,
+      title: 'BookClub – A Social Platform for Hobby-Based Communities',
+      shortDescription: 'BookClub is a hobby-based social platform where users can create, join, and manage interest-driven community groups.',
+      image: 'https://i.ibb.co/JRynpyxz/Screenshot-2025-06-30-004435.jpg',
+      tags: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB',],
+      category: ' Full-Stack',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+      description: 'BookClub is a full-stack web application built for hobbyists and enthusiasts to connect, discover, and create local interest-based groups such as book clubs, art circles, or hiking teams. This project encourages meaningful community engagement around shared passions through a modern, responsive, and secure platform.',
+      liveUrl: 'https://assignment-10-6f52b.web.app',
+      githubUrl: 'https://github.com/Mafikul5320/BookClub-Client',
+      challenges: [
+        ' Preventing Duplicate Book Borrowing',
+        ' Real-Time Quantity Management',
+        'Dynamic Toggle & Filter System',
+        ' Implementing JWT with Firebase Auth'
+      ],
+      improvements: [
+        'Admin Roles & Permissions – Add role-based access for better permission control.',
+        ' Email Reminders – Notify users about upcoming return deadlines.',
+        ' Discussion Board – Allow readers to discuss books or reviews.',
+        ' Email Notifications &  User Profile Customization'
       ]
     },
     {
@@ -96,7 +97,7 @@ const Projects = () => {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 object-cover rounded-lg"
+            className="w-full h-80 object-cover rounded-lg"
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
