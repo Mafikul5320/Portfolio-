@@ -7,11 +7,11 @@ const Projects = () => {
   const projects = [
 
     {
-      id: 2,
+      id: 1,
       title: 'LibraryLoop – Smart Library Management System ',
       shortDescription: 'LibraryLoop is a full-stack online library platform with AI-powered summaries, personalized recommendations, and book borrowing/return management.',
       image: 'https://i.ibb.co.com/sdpds1db/image.png',
-      tags: ['React', 'Firebase', 'Node.js', 'JWT',"Tailwind CSS","Express.js"],
+      tags: ['React', 'Firebase', 'Node.js', 'JWT', "Tailwind CSS", "Express.js"],
       category: ' Full-Stack',
       tech: ['React', 'Firebase', 'Node.js', 'JWT'],
       description: 'LibraryLoop is a full-stack web application designed for seamless library operations in educational institutions. Built with modern web technologies, the platform enables admins and users to manage books, track borrow/return activity, and explore categorized book collections efficiently. With a clean and responsive UI, JWT-secured routes, and animated user experience, LibraryLoop brings library management into the digital era.',
@@ -30,8 +30,34 @@ const Projects = () => {
         'Create assessment and quiz features'
       ]
     },
-        {
-      id: 1,
+    {
+      id: 2,
+      title: 'NewsWeek – News & Articles Platform',
+      shortDescription: "NewsWeek is a full-stack news platform with article publishing, premium subscriptions, role-based access, and admin analytics dashboards.",
+      image: 'https://i.ibb.co.com/d0jntyg6/Screenshot-2025-08-25-202532.png',
+      tags: ["React.js", "Tailwind CSS", "React-Select", "React-Google-Charts", "Swiper.js", "Node.js", "Express.js", "MongoDB", "JWT Authenticatio"],
+      category: ' Full-Stack',
+      tech: ["React.js", "Tailwind CSS", "React-Select", "React-Google-Charts", "Swiper.js", "Node.js", "Express.js", "MongoDB", "JWT Authenticatio"],
+      description: 'A modern full-stack digital newspaper platform built with React, Node.js, Express, MongoDB, and Firebase. The project offers role-based access, premium content, article management, and subscription features to create a professional online news experience.',
+      liveUrl: 'https://newsweek-pro.web.app',
+      githubUrl: 'https://github.com/Mafikul5320/NewsWeek-Client',
+      challenges: [
+        'Role-based Authentication – Managing access for Admin, Editors, and Subscribers',
+        'Premium Content Restriction – Securely showing premium articles only to paid users',
+        'Article Approval Workflow – Ensuring only approved articles go live',
+        'Performance Optimization – Handling large datasets and fast article search',
+        'Responsive UI – Making sure the news portal works seamlessly across all devices'
+      ],
+      improvements: [
+        'Advanced Analytics – Add detailed readership and engagement statistics for Admin',
+        'AI-powered Recommendations – Suggest articles based on reader interests',
+        'Live News Updates – Auto-refresh for breaking news without page reload',
+        'Comment & Discussion System – Allow readers to comment and interact',
+        'Push Notifications – Notify users of trending and breaking news instantly'
+      ]
+    },
+    {
+      id: 3,
       title: 'BookClub – A Social Platform for Hobby-Based Communities',
       shortDescription: 'BookClub is a hobby-based social platform where users can create, join, and manage interest-driven community groups.',
       image: 'https://i.ibb.co/JRynpyxz/Screenshot-2025-06-30-004435.jpg',
@@ -54,30 +80,30 @@ const Projects = () => {
         ' Email Notifications &  User Profile Customization'
       ]
     },
-    {
-      id: 3,
-      title: 'FrostBox',
-      shortDescription: 'Digital FrostBox with advanced search and recommendations',
-      image: 'https://i.ibb.co/bgmC69vZ/Screenshot-2025-06-30-013437.jpg',
-      tags: ['React', ],
-      category: 'FontEnd',
-      tech: ['React', 'Node.js'],
-      description: 'A comprehensive online bookstore featuring advanced search capabilities, personalized recommendations, user reviews, wishlist functionality, and secure checkout process. Includes both physical and digital book sales.',
-      liveUrl: 'https://assigment-9-eb6e9.web.app',
-      githubUrl: 'https://github.com/Mafikul5320/Pool-Cleaning-Solutions',
-      challenges: [
-        'Implementing advanced search with filters',
-        'Building recommendation algorithm',
-        'Managing large book database efficiently',
-        'Handling both digital and physical book orders'
-      ],
-      improvements: [
-        'Add social reading features',
-        'Implement book preview functionality',
-        'Create reading progress tracking',
-        'Add author profiles and events'
-      ]
-    }
+    // {
+    //   id: 3,
+    //   title: 'FrostBox',
+    //   shortDescription: 'Digital FrostBox with advanced search and recommendations',
+    //   image: 'https://i.ibb.co/bgmC69vZ/Screenshot-2025-06-30-013437.jpg',
+    //   tags: ['React', ],
+    //   category: 'FontEnd',
+    //   tech: ['React', 'Node.js'],
+    //   description: 'A comprehensive online bookstore featuring advanced search capabilities, personalized recommendations, user reviews, wishlist functionality, and secure checkout process. Includes both physical and digital book sales.',
+    //   liveUrl: 'https://assigment-9-eb6e9.web.app',
+    //   githubUrl: 'https://github.com/Mafikul5320/Pool-Cleaning-Solutions',
+    //   challenges: [
+    //     'Implementing advanced search with filters',
+    //     'Building recommendation algorithm',
+    //     'Managing large book database efficiently',
+    //     'Handling both digital and physical book orders'
+    //   ],
+    //   improvements: [
+    //     'Add social reading features',
+    //     'Implement book preview functionality',
+    //     'Create reading progress tracking',
+    //     'Add author profiles and events'
+    //   ]
+    // }
   ];
 
   const ProjectModal = ({ project, onClose }) => (
@@ -197,8 +223,9 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 shadow-lg"
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 shadow-lg h-full flex flex-col"
             >
+              {/* Image Section */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
@@ -212,19 +239,24 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="p-6">
+              {/* Content Section */}
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.shortDescription}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, index) => (
-                    <span key={index} className="bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs">
+                    <span
+                      key={index}
+                      className="bg-gray-100 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex space-x-3">
+                {/* Buttons (always at bottom) */}
+                <div className="flex space-x-3 mt-auto">
                   <button
                     onClick={() => setSelectedProject(project)}
                     className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm"
@@ -238,7 +270,7 @@ const Projects = () => {
                     <Github className="h-4 w-4" />
                   </a>
                   <a
-                    target='_blank'
+                    target="_blank"
                     href={project.liveUrl}
                     className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white p-2 rounded-lg transition-all duration-200"
                   >
@@ -247,6 +279,7 @@ const Projects = () => {
                 </div>
               </div>
             </div>
+
           ))}
         </div>
 

@@ -18,19 +18,22 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-sm font-semibold px-4 py-2 rounded-full border border-purple-500/20">
-                   Frontend Developer
+                  Frontend Developer
                 </span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
                   Hi, I am Mafikul - Web
-Developer
+                  Developer
                 </span>
               </h1>
-              
+
               <p className="dark:text-gray-300 text-gray-600  text-lg sm:text-xl max-w-2xl leading-relaxed">
-                I’m a <span className='font-extrabold'>Frontend</span> Developer passionate about crafting beautiful, responsive, and user-friendly web interfaces. I specialize in turning design concepts into pixel-perfect websites using React, Tailwind CSS, and modern web technologies.
+                Passionate and detail-oriented <span className='font-extrabold'>Frontend</span> Developer with a strong foundation in React.js, Tailwind CSS, and the MERN stack. Adept at crafting
+                pixel-perfect, high-performance UIs with clean, maintainable code that deliver exceptional user experiences. Committed to continuous learning
+                and adding value in an innovation-driven, collaborative environment.
+
               </p>
             </div>
 
@@ -40,7 +43,7 @@ Developer
                 <Download className="h-5 w-5" />
                 <span>Download Resume</span>
               </a>
-              
+
               <button className="border border-purple-500/50 text-purple-400 hover:bg-purple-500/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
                 <ExternalLink className="h-5 w-5" />
                 <span>View CV</span>
@@ -78,19 +81,19 @@ Developer
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl"></div>
-              
+
               {/* Profile Image Container */}
               <div className="relative w-80 h-80 sm:w-96 sm:h-96">
                 <div className="w-full h-full rounded-full border-4 border-gradient-to-r from-purple-500 to-pink-500 p-1 bg-gradient-to-r from-purple-500 to-pink-500">
                   <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                    <img 
-                      src="https://i.ibb.co/MyKb4qqH/Chat-GPT-Image-Jun-25-2025-05-00-10-PM-1.png" 
-                      alt="Developer Profile" 
+                    <img
+                      src="https://i.ibb.co/MyKb4qqH/Chat-GPT-Image-Jun-25-2025-05-00-10-PM-1.png"
+                      alt="Developer Profile"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
-                
+
                 {/* Floating Stats */}
                 {/* <div className="absolute top-8 -right-8 bg-gray-800/90 backdrop-blur-sm border border-purple-500/20 rounded-lg p-3 animate-bounce-slow">
                   <div className="text-center">
@@ -98,8 +101,8 @@ Developer
                     <div className="text-xs text-gray-400">Years of Experience</div>
                   </div>
                 </div> */}
-                
-                <div className="absolute bottom-8 -left-8 bg-gray-800/90 backdrop-blur-sm border border-pink-500/20 rounded-lg p-3 animate-bounce-slow" style={{animationDelay: '1s'}}>
+
+                <div className="absolute bottom-8 -left-8 bg-gray-800/90 backdrop-blur-sm border border-pink-500/20 rounded-lg p-3 animate-bounce-slow" style={{ animationDelay: '1s' }}>
                   <div className="text-center">
                     <div className="text-pink-400 font-bold text-lg">10+</div>
                     <div className="text-xs text-gray-400">Projects Completed</div>
