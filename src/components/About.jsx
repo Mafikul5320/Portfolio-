@@ -48,7 +48,7 @@ const About = () => {
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-            Hi! I'm Mafikul Islam, a passionate MERN Stack Developer with hands-on experience building full-stack web applications using MongoDB, Express.js, React, and Node.js. I love turning complex problems into clean, scalable solutions.
+            Hi! I'm Mafikul Islam, a passionate MERN Stack Developer with hands-on experience building full-stack web applications using React.js, Next.js, Node.js, Express.js, and MongoDB. I love turning complex problems into clean, scalable solutions.
           </p>
         </div>
         {/* Main Content */}
@@ -86,7 +86,7 @@ const About = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Code className="h-5 w-5 text-purple-500" />
-                    <strong className="text-gray-700 dark:text-gray-300">Frontend Developer</strong>
+                    <strong className="text-gray-700 dark:text-gray-300">MERN Stack Developer</strong>
                   </div>
                 </div>
               </div>

@@ -4,9 +4,8 @@ import { Download, Mail, Github, Linkedin, Twitter, ExternalLink } from 'lucide-
 const Hero = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Mafikul5320', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#contact', label: 'Email' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/mafikulislam', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:mdmafikul.islam53@gmail.com', label: 'Email' }
   ];
 
   return (
@@ -18,21 +17,22 @@ const Hero = () => {
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="bg-gradient-to-r from-purple-400 to-pink-400 text-sm font-semibold px-4 py-2 rounded-full border border-purple-500/20">
-                  Frontend Developer
+                  MERN Stack Developer
                 </span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
-                  Hi, I am Mafikul - Web
+                  Hi, I am Mafikul  Web
                   Developer
                 </span>
               </h1>
 
               <p className="dark:text-gray-300 text-gray-600  text-lg sm:text-xl max-w-2xl leading-relaxed">
-                Passionate and detail-oriented <span className='font-extrabold'>Frontend</span> Developer with a strong foundation in React.js, Tailwind CSS, and the MERN stack. Adept at crafting
-                pixel-perfect, high-performance UIs with clean, maintainable code that deliver exceptional user experiences. Committed to continuous learning
-                and adding value in an innovation-driven, collaborative environment.
+                Passionate and detail-oriented <span className='font-extrabold'>MERN Stack</span> Developer with a strong foundation in React.js, Next.js, Node.js, Express.js, and MongoDB. Skilled in
+                building full-stack applications, integrating secure and efficient APIs, and optimizing performance for scalability and reliability. Committed to
+                continuous learning and delivering high-quality, user-focused solutions in a collaborative, innovation-driven environment.
+
 
               </p>
             </div>
