@@ -80,6 +80,31 @@ const Projects = () => {
         ' Email Notifications &  User Profile Customization'
       ]
     },
+    {
+      id: 4,
+      title: 'SwiftShop – Modern E-commerce Platform',
+      shortDescription: 'SwiftShop is a full-stack e-commerce platform featuring product management, secure authentication, cart & checkout system, and admin dashboard with analytics.',
+      image: 'https://i.ibb.co.com/rGgRStXZ/Screenshot-2025-09-06-155642.png',
+      tags: ['React', 'Node.js', 'MongoDB', 'JWT', 'Tailwind CSS', 'Express.js'],
+      category: 'Full-Stack',
+      tech: ['React', 'Node.js', 'MongoDB', 'Firebase', 'Tailwind CSS'],
+      description: 'SwiftShop is a complete e-commerce solution where users can browse products, add items to cart, and securely checkout. It includes an admin dashboard for managing products, orders, and users.JWT Authentication and protected routes, while MongoDB ensures scalable product and order storage. With a clean UI and responsive design, SwiftShop provides a smooth online shopping experience.',
+      liveUrl: 'https://swiftshop-client.web.app',
+      githubUrl: 'https://github.com/Mafikul5320/SwiftShop-Client',
+      challenges: [
+        'Building a secure cart and checkout flow',
+        'Integrating JWT authentication ',
+        'Handling product CRUD operations with admin privileges',
+        'Managing real-time stock updates and order tracking'
+      ],
+      improvements: [
+        'Add AI-powered product recommendations',
+        'Implement multiple payment gateway options',
+        'Introduce wishlist & product review features',
+        'Add sales analytics with charts and insights'
+      ]
+    }
+
     // {
     //   id: 3,
     //   title: 'FrostBox',
@@ -206,7 +231,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100/50 dark:bg-gray-800/30 relative">
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="w-11/12 mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-purple-100/80 dark:bg-purple-900/30 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-purple-200/50 dark:border-purple-500/30">
             <Code className="h-4 w-4 text-purple-600 dark:text-purple-400" />
@@ -219,7 +244,7 @@ const Projects = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project) => (
             <div
               key={project.id}
