@@ -105,30 +105,7 @@ const Projects = () => {
       ]
     }
 
-    // {
-    //   id: 3,
-    //   title: 'FrostBox',
-    //   shortDescription: 'Digital FrostBox with advanced search and recommendations',
-    //   image: 'https://i.ibb.co/bgmC69vZ/Screenshot-2025-06-30-013437.jpg',
-    //   tags: ['React', ],
-    //   category: 'FontEnd',
-    //   tech: ['React', 'Node.js'],
-    //   description: 'A comprehensive online bookstore featuring advanced search capabilities, personalized recommendations, user reviews, wishlist functionality, and secure checkout process. Includes both physical and digital book sales.',
-    //   liveUrl: 'https://assigment-9-eb6e9.web.app',
-    //   githubUrl: 'https://github.com/Mafikul5320/Pool-Cleaning-Solutions',
-    //   challenges: [
-    //     'Implementing advanced search with filters',
-    //     'Building recommendation algorithm',
-    //     'Managing large book database efficiently',
-    //     'Handling both digital and physical book orders'
-    //   ],
-    //   improvements: [
-    //     'Add social reading features',
-    //     'Implement book preview functionality',
-    //     'Create reading progress tracking',
-    //     'Add author profiles and events'
-    //   ]
-    // }
+   
   ];
 
   const ProjectModal = ({ project, onClose }) => (
