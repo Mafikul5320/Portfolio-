@@ -1,11 +1,27 @@
+'use client';
+
 import React, { useState } from 'react';
-import { ExternalLink, Github, X, Code, Globe, Zap, AlertCircle, TrendingUp } from 'lucide-react';
+import { ExternalLink, Github, X, Code, Globe, AlertCircle, TrendingUp } from 'lucide-react';
+
+interface Project {
+  id: number;
+  title: string;
+  shortDescription: string;
+  image: string;
+  tags: string[];
+  category: string;
+  tech: string[];
+  description: string;
+  liveUrl: string;
+  githubUrl: string;
+  challenges: string[];
+  improvements: string[];
+}
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projects = [
-
+  const projects: Project[] = [
     {
       id: 1,
       title: 'LibraryLoop – Smart Library Management System ',
@@ -32,6 +48,30 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: 'Smart Mess Management – A Multi-Tenant Mess & Expense Management ',
+      shortDescription: 'MessSmart is a dynamic multi-tenant platform designed to automate meal tracking, market logs, financial ledgers, and dynamic hot meal costs for shared living communities.',
+      image: 'https://i.ibb.co.com/7tq3dd0m/image.png',
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'TanStack Query'],
+      category: 'Full-Stack',
+      tech: ['Next.js 16 (App Router)', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Tailwind CSS', 'Shadcn UI', 'TanStack Query', 'Axios', 'Zod'],
+      description: 'MessSmart is an industry-standard, multi-tenant SaaS application built for roommates, hostel students, and messes to seamlessly handle daily expenses. It completely eliminates manual paperwork by automating shared meal rate calculations, individual fixed costs, and secure transaction histories. Featuring a premium Deep Green Glassmorphic UI inspired by modern design trends, it offers data isolation across multiple messes using unique invite codes.',
+      liveUrl: 'https://your-mess-app.web.app', // আপনার লাইভ সাইট লিংক
+      githubUrl: 'https://github.com/Mafikul5320/MessSmart-Client', // আপনার গিটহাব লিংক
+      challenges: [
+        'Dynamic Hot Meal Recalculation – Implementing complex database transactions to auto-adjust multiple users balances when food quantity or unit price changes dynamically.',
+        'Multi-Tenant Data Isolation – Ensuring absolute privacy where one mess cannot query, view, or modify another mess data using strict backend middleware and database relations.',
+        'Transactional Database Integrity – Wrapping financial updates (deposits, ledger logs, market expenses) inside Prisma.$transaction to prevent partial data writes during failures.',
+        'Robust Business Logic Validation – Crafting custom server-side constraints to prevent managers from reducing total food units below the already consumed count, eliminating negative balances.'
+      ],
+      improvements: [
+        'Automated Month-End Settlement – A one-click final calculation system to auto-generate invoices and reset balances for the next month.',
+        'MFS Gateway Integration – Adding automated bKash, Nagad, or Rocket APIs for instant deposit verifications without manual admin approval.',
+        'Automated Push/SMS Notifications – Reminding users about daily meal lock deadlines or low balance warnings.',
+        'Analytics Dashboard – Integrating charting libraries (Recharts) for monthly cost distribution and meal rate trend visualization.'
+      ]
+    },
+    {
+      id: 3,
       title: 'NewsWeek – News & Articles Platform',
       shortDescription: "NewsWeek is a full-stack news platform with article publishing, premium subscriptions, role-based access, and admin analytics dashboards.",
       image: 'https://i.ibb.co.com/d0jntyg6/Screenshot-2025-08-25-202532.png',
@@ -57,30 +97,6 @@ const Projects = () => {
       ]
     },
     {
-      id: 3,
-      title: 'BookClub – A Social Platform for Hobby-Based Communities',
-      shortDescription: 'BookClub is a hobby-based social platform where users can create, join, and manage interest-driven community groups.',
-      image: 'https://i.ibb.co/JRynpyxz/Screenshot-2025-06-30-004435.jpg',
-      tags: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB',],
-      category: ' Full-Stack',
-      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-      description: 'BookClub is a full-stack web application built for hobbyists and enthusiasts to connect, discover, and create local interest-based groups such as book clubs, art circles, or hiking teams. This project encourages meaningful community engagement around shared passions through a modern, responsive, and secure platform.',
-      liveUrl: 'https://assignment-10-6f52b.web.app',
-      githubUrl: 'https://github.com/Mafikul5320/BookClub-Client',
-      challenges: [
-        ' Preventing Duplicate Book Borrowing',
-        ' Real-Time Quantity Management',
-        'Dynamic Toggle & Filter System',
-        ' Implementing JWT with Firebase Auth'
-      ],
-      improvements: [
-        'Admin Roles & Permissions – Add role-based access for better permission control.',
-        ' Email Reminders – Notify users about upcoming return deadlines.',
-        ' Discussion Board – Allow readers to discuss books or reviews.',
-        ' Email Notifications &  User Profile Customization'
-      ]
-    },
-    {
       id: 4,
       title: 'SwiftShop – Modern E-commerce Platform',
       shortDescription: 'SwiftShop is a full-stack e-commerce platform featuring product management, secure authentication, cart & checkout system, and admin dashboard with analytics.',
@@ -89,7 +105,7 @@ const Projects = () => {
       category: 'Full-Stack',
       tech: ['React', 'Node.js', 'MongoDB', 'Firebase', 'Tailwind CSS'],
       description: 'SwiftShop is a complete e-commerce solution where users can browse products, add items to cart, and securely checkout. It includes an admin dashboard for managing products, orders, and users.JWT Authentication and protected routes, while MongoDB ensures scalable product and order storage. With a clean UI and responsive design, SwiftShop provides a smooth online shopping experience.',
-      liveUrl: 'https://swiftshop-client.web.app',
+      liveUrl: 'https://swiftshop-client.vercel.app',
       githubUrl: 'https://github.com/Mafikul5320/SwiftShop-Client',
       challenges: [
         'Building a secure cart and checkout flow',
@@ -104,11 +120,9 @@ const Projects = () => {
         'Add sales analytics with charts and insights'
       ]
     }
-
-   
   ];
 
-  const ProjectModal = ({ project, onClose }) => (
+  const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl max-h-[90vh] overflow-y-auto w-full border border-gray-200 dark:border-gray-700">
         <div className="sticky top-0 bg-white dark:bg-gray-800 p-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
@@ -154,6 +168,7 @@ const Projects = () => {
               <div className="flex space-x-4">
                 <a target='_blank'
                   href={project.liveUrl}
+                  rel="noopener noreferrer"
                   className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2"
                 >
                   <Globe className="h-4 w-4" />
@@ -161,6 +176,8 @@ const Projects = () => {
                 </a>
                 <a
                   href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2"
                 >
                   <Github className="h-4 w-4" />
@@ -227,12 +244,11 @@ const Projects = () => {
               key={project.id}
               className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10 shadow-lg h-full flex flex-col"
             >
-              {/* Image Section */}
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute top-4 right-4">
                   <span className="bg-purple-500/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
@@ -241,7 +257,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Content Section */}
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.shortDescription}</p>
@@ -257,7 +272,6 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Buttons (always at bottom) */}
                 <div className="flex space-x-3 mt-auto">
                   <button
                     onClick={() => setSelectedProject(project)}
@@ -267,6 +281,8 @@ const Projects = () => {
                   </button>
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white p-2 rounded-lg transition-all duration-200"
                   >
                     <Github className="h-4 w-4" />
@@ -274,6 +290,7 @@ const Projects = () => {
                   <a
                     target="_blank"
                     href={project.liveUrl}
+                    rel="noopener noreferrer"
                     className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white p-2 rounded-lg transition-all duration-200"
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -281,11 +298,9 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-
           ))}
         </div>
 
-        {/* Modal */}
         {selectedProject && (
           <ProjectModal
             project={selectedProject}

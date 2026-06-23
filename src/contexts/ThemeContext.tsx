@@ -1,6 +1,13 @@
+'use client';
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const ThemeContext = createContext();
+interface ThemeContextType {
+  isDark: boolean;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -10,33 +17,35 @@ export const useTheme = () => {
   return context;
 };
 
-export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(() => {
-    // Check localStorage first, then system preference, default to dark
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      return saved === 'dark';
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Save to localStorage
+    setMounted(true);
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setIsDark(saved === 'dark');
+    } else {
+      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    
-    // Apply to document
+
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [isDark]);
+  }, [isDark, mounted]);
 
-  // Listen for system theme changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => {
-      // Only update if no manual preference is saved
+    const handleChange = (e: MediaQueryListEvent) => {
       if (!localStorage.getItem('theme')) {
         setIsDark(e.matches);
       }

@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
+        sans: ['var(--font-mono)', 'monospace'], // Fallback for components that force sans
       },
       animation: {
         'bounce-slow': 'bounce-slow 3s infinite',

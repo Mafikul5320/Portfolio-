@@ -1,74 +1,62 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Briefcase, GraduationCap, Calendar, MapPin, Award, Users, TrendingUp } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, MapPin, Award, TrendingUp } from 'lucide-react';
+
+interface ExperienceData {
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  type: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  color: string;
+}
+
+interface EducationData {
+  degree: string;
+  institution: string;
+  location: string;
+  duration: string;
+  gpa: string;
+  description: string;
+  achievements: string[];
+  coursework: string[];
+  color: string;
+}
+
+interface TabButtonProps {
+  id: string;
+  label: string;
+  icon: any;
+  isActive: boolean;
+  onClick: (id: string) => void;
+}
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState('experience');
+  const [activeTab, setActiveTab] = useState('education');
 
-  const experiences = [
-    // {
-    //   title: 'Senior Full Stack Developer',
-    //   company: 'TechCorp Solutions',
-    //   location: 'San Francisco, CA',
-    //   duration: '2022 - Present',
-    //   type: 'Full-time',
-    //   description: 'Leading development of scalable web applications using React, Next.js, and Node.js. Mentoring junior developers and architecting cloud-native solutions.',
-    //   achievements: [
-    //     'Led a team of 5 developers in building a microservices architecture',
-    //     'Improved application performance by 40% through optimization',
-    //     'Implemented CI/CD pipelines reducing deployment time by 60%'
-    //   ],
-    //   technologies: ['React', 'Next.js', 'Node.js', 'AWS', 'PostgreSQL'],
-    //   color: 'from-blue-500 to-cyan-500'
-    // },
-    // {
-    //   title: 'Frontend Developer',
-    //   company: 'StartupXYZ',
-    //   location: 'Remote',
-    //   duration: '2025',
-    //   type: 'Full-time',
-    //   description: 'Developed responsive user interfaces and improved application performance. Collaborated with design teams to implement pixel-perfect designs.',
-    //   achievements: [
-    //     'Built 15+ responsive web applications from scratch',
-    //     'Reduced bundle size by 35% through code splitting',
-    //     'Mentored 3 junior developers in modern React practices'
-    //   ],
-    //   technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Redux'],
-    //   color: 'from-green-500 to-teal-500'
-    // },
-    // {
-    //   title: 'Junior Web Developer',
-    //   company: 'WebStudio Inc',
-    //   location: 'New York, NY',
-    //   duration: '2020 - 2021',
-    //   type: 'Full-time',
-    //   description: 'Built and maintained client websites using modern web technologies. Gained experience in full-stack development and agile methodologies.',
-    //   achievements: [
-    //     'Delivered 20+ client projects on time and within budget',
-    //     'Learned and implemented modern JavaScript frameworks',
-    //     'Collaborated with cross-functional teams using Agile methodology'
-    //   ],
-    //   technologies: ['JavaScript', 'HTML/CSS', 'PHP', 'MySQL'],
-    //   color: 'from-purple-500 to-pink-500'
-    // }
-    {
-  title: 'Junior Frontend Developer (Personal Projects)',
-  company: 'Self-Learning',
-  location: 'Remote',
-  duration: '2025 - Present',
-  type: 'Project-based',
-  description: 'Built several web applications as part of personal learning. Focused on responsive design, component reuse, and performance.',
-  achievements: [
-    'Created 5+ fully functional React apps using public APIs',
-    'Improved Lighthouse performance scores to 90+ in all projects',
-    'Wrote clean and reusable code following modern React standards'
-  ],
-  technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Git'],
-  color: 'from-blue-500 to-indigo-500'
-},
+  // const experiences: ExperienceData[] = [
+  //   {
+  //     title: 'Junior Frontend Developer (Personal Projects)',
+  //     company: 'Self-Learning',
+  //     location: 'Remote',
+  //     duration: '2025 - Present',
+  //     type: 'Project-based',
+  //     description: 'Built several web applications as part of personal learning. Focused on responsive design, component reuse, and performance.',
+  //     achievements: [
+  //       'Created 5+ fully functional React apps using public APIs',
+  //       'Improved Lighthouse performance scores to 90+ in all projects',
+  //       'Wrote clean and reusable code following modern React standards'
+  //     ],
+  //     technologies: ['React', 'JavaScript', 'Tailwind CSS', 'Git'],
+  //     color: 'from-blue-500 to-indigo-500'
+  //   },
+  // ];
 
-  ];
-
-  const education = [
+  const education: EducationData[] = [
     {
       degree: 'B.Sc. in Computer Science & Engineering',
       institution: 'Northern University of Bangladesh',
@@ -84,7 +72,7 @@ const Experience = () => {
     }
   ];
 
-  const TabButton = ({ id, label, icon: Icon, isActive, onClick }) => (
+  const TabButton: React.FC<TabButtonProps> = ({ id, label, icon: Icon, isActive, onClick }) => (
     <button
       onClick={() => onClick(id)}
       className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
@@ -97,7 +85,7 @@ const Experience = () => {
     </button>
   );
 
-  const ExperienceCard = ({ exp, index }) => (
+  const ExperienceCard: React.FC<{ exp: ExperienceData; index: number }> = ({ exp }) => (
     <div className="bg-white dark:bg-gray-800 relative rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
       <div
           className='opacity-0 absolute dark:opacity-20 inset-0 z-0'
@@ -163,7 +151,7 @@ const Experience = () => {
     </div>
   );
 
-  const EducationCard = ({ edu, index }) => (
+  const EducationCard: React.FC<{ edu: EducationData; index: number }> = ({ edu }) => (
     <div className="bg-white dark:bg-gray-800 relative rounded-2xl p-8 shadow-xl border border-gray-400 dark:border-[#4b4b8b] hover:shadow-2xl transition-all duration-300">
       <div
           className='opacity-0 absolute dark:opacity-20 inset-0 z-0'
@@ -248,7 +236,7 @@ const Experience = () => {
             <span className="text-purple-600 dark:text-purple-400 font-medium text-sm">My Journey</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Experience & Education
+             Education
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
             A timeline of my professional growth and educational foundation
@@ -260,13 +248,13 @@ const Experience = () => {
         <div className="flex justify-center mb-12">
           <div className="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700">
             <div className="flex space-x-2">
-              <TabButton
+              {/* <TabButton
                 id="experience"
                 label="Experience"
                 icon={Briefcase}
                 isActive={activeTab === 'experience'}
                 onClick={setActiveTab}
-              />
+              /> */}
               <TabButton
                 id="education"
                 label="Education"
@@ -280,13 +268,13 @@ const Experience = () => {
 
         {/* Content */}
         <div className="space-y-8">
-          {activeTab === 'experience' && (
+          {/* {activeTab === 'experience' && (
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <ExperienceCard key={index} exp={exp} index={index} />
               ))}
             </div>
-          )}
+          )} */}
 
           {activeTab === 'education' && (
             <div className="space-y-8">

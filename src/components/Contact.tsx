@@ -1,11 +1,13 @@
+'use client';
+
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MessageSquare, 
-  Send, 
-  MapPin, 
-  Clock, 
+import {
+  Mail,
+  Phone,
+  MessageSquare,
+  Send,
+  MapPin,
+  Clock,
   User,
   CheckCircle,
   ArrowRight,
@@ -27,24 +29,22 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
+
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: '', email: '', subject: '', message: '', budget: '', timeline: '' });
@@ -59,7 +59,7 @@ const Contact = () => {
       description: 'Send me an email anytime',
       href: 'mailto:mdmafikul.islam53@gmail.com',
       color: 'from-blue-500 to-cyan-500',
-      available: ''
+      available: 'Always available'
     },
     {
       icon: Phone,
@@ -75,7 +75,7 @@ const Contact = () => {
       title: 'WhatsApp',
       value: '+8801796048427',
       description: 'Quick chat on WhatsApp',
-      href: 'https://wa.me/qr/OJ6W2FQW7SI3B1',
+      href: 'https://wa.me/8801796048427',
       color: 'from-green-400 to-green-600',
       available: 'Usually online'
     },
@@ -123,13 +123,13 @@ const Contact = () => {
             <span className="text-purple-600 dark:text-purple-400 font-medium text-sm">Get In Touch</span>
           </div>
           <h2 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-            Let's Create Something
+            Let&apos;s Create Something
             <span className="block bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Amazing Together
             </span>
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
-            Ready to bring your vision to life? I'm here to help you build exceptional digital experiences 
+            Ready to bring your vision to life? I&apos;m here to help you build exceptional digital experiences
             that make a lasting impact.
           </p>
         </div>
@@ -150,11 +150,11 @@ const Contact = () => {
                     <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                       <method.icon className="h-6 w-6 text-white" />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                         {method.title}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm mb-1">{method.value}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm font-medium mb-1 truncate">{method.value}</p>
                       <p className="text-gray-500 dark:text-gray-400 text-xs">{method.available}</p>
                     </div>
                     <ArrowRight className="h-4 w-4 text-gray-400 group-hover:text-purple-500 group-hover:translate-x-1 transition-all duration-300" />
@@ -163,20 +163,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Status */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-3xl p-8 border border-green-200 dark:border-green-800">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <h4 className="font-semibold text-green-800 dark:text-green-300">Currently Available</h4>
-              </div>
-              <p className="text-green-700 dark:text-green-400 text-sm mb-4">
-                I'm accepting new projects and typically respond within 2-4 hours during business hours.
-              </p>
-              <div className="flex items-center space-x-2 text-xs text-green-600 dark:text-green-400">
-                <Clock className="h-4 w-4" />
-                <span>Next available: This week</span>
-              </div>
-            </div>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4">
@@ -196,7 +182,7 @@ const Contact = () => {
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Start Your Project</h3>
-                <p className="text-gray-600 dark:text-gray-300">Tell me about your project and let's discuss how we can work together.</p>
+                <p className="text-gray-600 dark:text-gray-300">Tell me about your project and let&apos;s discuss how we can work together.</p>
               </div>
 
               {isSubmitted ? (
@@ -205,7 +191,7 @@ const Contact = () => {
                     <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
                   </div>
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Message Sent!</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                  <p className="text-gray-600 dark:text-gray-300">Thank you for reaching out. I&apos;ll get back to you within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -225,7 +211,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-200"
-                          placeholder="John Doe"
+                          placeholder="Enter Your Name"
                         />
                       </div>
                     </div>
@@ -243,7 +229,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-200"
-                          placeholder="john@example.com"
+                          placeholder="Enter Your Email"
                         />
                       </div>
                     </div>
@@ -261,6 +247,7 @@ const Contact = () => {
                             type="radio"
                             name="subject"
                             value={type.name}
+                            checked={formData.subject === type.name}
                             onChange={handleChange}
                             className="sr-only peer"
                           />
@@ -352,7 +339,7 @@ const Contact = () => {
                   </button>
 
                   <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                    By submitting this form, you agree to our privacy policy. We'll never share your information.
+                    By submitting this form, you agree to our privacy policy. We&apos;ll never share your information.
                   </p>
                 </form>
               )}

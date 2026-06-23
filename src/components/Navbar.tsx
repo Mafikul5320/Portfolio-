@@ -1,7 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code, Download, Sun, Moon, ScanEye } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
-import { Link } from 'react-router';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -83,7 +84,6 @@ const Navbar = () => {
 
                 <a target='_blank' href='https://drive.google.com/file/d/1TxZgFirzlGv455Gt6dNAc_Z_iLY0c5nV/view'>
                 <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-2">
-                  {/* <Download className="h-4 w-4" /> */}
                   <ScanEye className="h-4 w-4" />
                   <span>Resume</span>
                 </button>

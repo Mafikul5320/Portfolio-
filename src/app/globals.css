@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

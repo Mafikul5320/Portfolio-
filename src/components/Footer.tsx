@@ -1,27 +1,27 @@
+'use client';
+
 import React from 'react';
 import {
-  Mail, Phone, MapPin, Linkedin, Github, Facebook, Instagram, X
+  Mail, Phone, MapPin, Linkedin, Github, Facebook
 } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0d0d0d] text-white py-12 px-4 md:px-16 font-mono">
+    <footer className="bg-[#0d0d0d] text-white py-12 px-4 md:px-16 ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-sm">
 
         {/* Profile Section */}
         <div>
           <h2 className="text-lg font-bold text-purple-500">Md Mafikul islam</h2>
-          <p className="text-xs mt-1">MERN Stack Developer</p>
+          <p className="text-xs mt-1">FULL-STACK Developer</p>
           <p className="mt-4 text-gray-400 leading-relaxed">
             I am a passionate developer creating innovative web solutions with modern technologies.
-            Let’s build something amazing together!
+            Let&apos;s build something amazing together!
           </p>
           <div className="flex gap-3 mt-4">
             <a href="https://www.linkedin.com/in/mafikulislam/"><Linkedin className="w-5 h-5 text-blue-500 hover:scale-110" /></a>
             <a href="https://github.com/Mafikul5320"><Github className="w-5 h-5 hover:scale-110" /></a>
             <a href="https://www.facebook.com/mdmafikul.islam.3388"><Facebook className="w-5 h-5 text-blue-600 hover:scale-110" /></a>
-            {/* <a href="#"><Instagram className="w-5 h-5 text-red-500 hover:scale-110" /></a>
-            <a href="#"><X className="w-5 h-5 hover:scale-110" /></a> */}
           </div>
         </div>
 
@@ -35,18 +35,6 @@ const Footer = () => {
             <li>➤ Full Stack Development</li>
           </ul>
         </div>
-
-        {/* Quick Links Section */}
-        {/* <div>
-          <h3 className="text-white font-bold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-gray-300">
-            <li>➤ Home</li>
-            <li>➤ Projects</li>
-            <li>➤ Blogs</li>
-            <li>➤ Contact</li>
-            <li>➤ Dashboard</li>
-          </ul>
-        </div> */}
 
         {/* Contact Section */}
         <div>
@@ -74,7 +62,7 @@ const Footer = () => {
 
       {/* Bottom Line */}
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-500 text-xs">
-        © 2025 MD MAFIKUL ISLAM. ALL RIGHTS RESERVED.
+        © {new Date().getFullYear()} MD MAFIKUL ISLAM. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

@@ -1,32 +1,48 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '@/contexts/ThemeContext';
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  size: number;
+  opacity: number;
+  hue: number;
+  life: number;
+}
 
 const ParticleBackground = () => {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { isDark } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    
     const ctx = canvas.getContext('2d');
-    let animationId;
+    if (!ctx) return;
+    
+    let animationId: number;
 
-    const particles = [];
+    const particles: Particle[] = [];
     const particleCount = 80;
-    const connections = [];
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    const createParticle = () => ({
+    const createParticle = (): Particle => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       vx: (Math.random() - 0.5) * 0.8,
       vy: (Math.random() - 0.5) * 0.8,
       size: Math.random() * 3 + 1,
       opacity: Math.random() * 0.6 + 0.2,
-      hue: Math.random() * 60 + 260, // Purple to pink range
+      hue: Math.random() * 60 + 260,
       life: Math.random() * 100 + 100
     });
 
@@ -43,22 +59,18 @@ const ParticleBackground = () => {
         particle.y += particle.vy;
         particle.life--;
 
-        // Bounce off edges
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Regenerate particle if life is over
         if (particle.life <= 0) {
           particles[index] = createParticle();
         }
 
-        // Add slight pulsing effect
         particle.opacity = Math.sin(Date.now() * 0.001 + index) * 0.3 + 0.4;
       });
     };
 
     const drawParticles = () => {
-      // Clear canvas with gradient background
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       if (isDark) {
         gradient.addColorStop(0, 'rgba(17, 24, 39, 0.95)');
@@ -73,7 +85,6 @@ const ParticleBackground = () => {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Draw connections first
       particles.forEach((particle1, i) => {
         particles.slice(i + 1).forEach(particle2 => {
           const dx = particle1.x - particle2.x;
@@ -97,12 +108,10 @@ const ParticleBackground = () => {
         });
       });
 
-      // Draw particles
       particles.forEach(particle => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         
-        // Create gradient for each particle
         const particleGradient = ctx.createRadialGradient(
           particle.x, particle.y, 0,
           particle.x, particle.y, particle.size * 2
@@ -120,7 +129,6 @@ const ParticleBackground = () => {
         ctx.fill();
       });
 
-      // Add floating orbs
       const time = Date.now() * 0.001;
       for (let i = 0; i < 3; i++) {
         const x = canvas.width * 0.2 + Math.sin(time + i * 2) * 100;
