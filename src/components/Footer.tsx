@@ -7,7 +7,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0d0d0d] text-white py-12 px-4 md:px-16 ">
+    <footer className="bg-[#010b38] text-white py-12 px-4 md:px-16 ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 text-sm">
 
         {/* Profile Section */}
@@ -40,7 +40,7 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-bold mb-4">Contact</h3>
           <div className="space-y-3 text-gray-300 text-sm">
-            <p className="flex items-center gap-2"><Mail className="w-4 h-4" /> mdmafikulislam5320@gmail.com</p>
+            <p className="flex items-center gap-2"><Mail className="w-4 h-4" /> mdmafikul.islam53@gmail.com</p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> +880 1905-830727</p>
             <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> +880 1796-048427</p>
             <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Uttara, Dhaka, Bangladesh</p>

@@ -88,7 +88,7 @@ const Hero = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="/MAFIKUL_ISLAM _(Frontend Developer_Resume).pdf" download='MAFIKUL ISLAM (Frontend Developer_Resume)' className='bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center space-x-2'>
+              <a href="/MAFIKUL ISLAM (Full-Stack Developer Resume).pdf" download='MAFIKUL ISLAM (Full-Stack Developer Resume)' className='bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center space-x-2'>
                 <Download className="h-5 w-5" />
                 <span>Download Resume</span>
               </a>
@@ -132,10 +132,11 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl"></div>
 
               {/* Profile Image Container */}
-              <div className="relative aspect-square w-full rounded-full border-4 border-gradient-to-r from-purple-500 to-pink-500 p-1 bg-gradient-to-r from-purple-500 to-pink-500 overflow-hidden flex items-center justify-center">
+              <div className="relative aspect-square w-full  overflow-hidden flex items-center justify-center">
+                {/* rounded-full border-4 border-gradient-to-r from-purple-500 to-pink-500 p-1 bg-gradient-to-r from-purple-500 to-pink-500 */}
                 <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
                   <Image
-                    src="/portfolioprofile.png"
+                    src="/Profile.png"
                     alt="Developer Profile"
                     width={800}
                     height={800}
@@ -146,12 +147,12 @@ const Hero = () => {
                 </div>
 
                 {/* Floating Stats */}
-                <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm border border-pink-500/20 rounded-lg p-3 animate-bounce-slow" style={{ animationDelay: '1s' }}>
+                {/* <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-gray-800/90 backdrop-blur-sm border border-pink-500/20 rounded-lg p-3 animate-bounce-slow" style={{ animationDelay: '1s' }}>
                   <div className="text-center">
                     <div className="text-pink-400 font-bold text-lg">10+</div>
                     <div className="text-xs text-gray-400">Projects Completed</div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

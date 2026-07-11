@@ -82,7 +82,7 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                <a target='_blank' href='https://drive.google.com/file/d/1TxZgFirzlGv455Gt6dNAc_Z_iLY0c5nV/view'>
+                <a target='_blank' href='https://drive.google.com/file/d/1NZZaunD7-3_pY0IAIyy5VkVUHBx3VFng/view?usp=sharing'>
                 <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 transform hover:scale-105 flex items-center space-x-2">
                   <ScanEye className="h-4 w-4" />
                   <span>Resume</span>

@@ -55,8 +55,8 @@ const Projects = () => {
       category: 'Full-Stack',
       tech: ['Next.js 16 (App Router)', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Tailwind CSS', 'Shadcn UI', 'TanStack Query', 'Axios', 'Zod'],
       description: 'MessSmart is an industry-standard, multi-tenant SaaS application built for roommates, hostel students, and messes to seamlessly handle daily expenses. It completely eliminates manual paperwork by automating shared meal rate calculations, individual fixed costs, and secure transaction histories. Featuring a premium Deep Green Glassmorphic UI inspired by modern design trends, it offers data isolation across multiple messes using unique invite codes.',
-      liveUrl: 'https://your-mess-app.web.app', // আপনার লাইভ সাইট লিংক
-      githubUrl: 'https://github.com/Mafikul5320/MessSmart-Client', // আপনার গিটহাব লিংক
+      liveUrl: 'https://mess-management-public.vercel.app', // আপনার লাইভ সাইট লিংক
+      githubUrl: 'https://github.com/Mafikul5320/Mess-Management--Frontend', // আপনার গিটহাব লিংক
       challenges: [
         'Dynamic Hot Meal Recalculation – Implementing complex database transactions to auto-adjust multiple users balances when food quantity or unit price changes dynamically.',
         'Multi-Tenant Data Isolation – Ensuring absolute privacy where one mess cannot query, view, or modify another mess data using strict backend middleware and database relations.',
@@ -72,6 +72,30 @@ const Projects = () => {
     },
     {
       id: 3,
+      title: 'SwiftShop – Modern E-commerce Platform',
+      shortDescription: 'SwiftShop is a full-stack e-commerce platform featuring product management, secure authentication, cart & checkout system, and admin dashboard with analytics.',
+      image: 'https://i.ibb.co.com/rGgRStXZ/Screenshot-2025-09-06-155642.png',
+      tags: ['React', 'Node.js', 'MongoDB', 'JWT', 'Tailwind CSS', 'Express.js'],
+      category: 'Full-Stack',
+      tech: ['React', 'Node.js', 'MongoDB', 'Firebase', 'Tailwind CSS'],
+      description: 'SwiftShop is a complete e-commerce solution where users can browse products, add items to cart, and securely checkout. It includes an admin dashboard for managing products, orders, and users.JWT Authentication and protected routes, while MongoDB ensures scalable product and order storage. With a clean UI and responsive design, SwiftShop provides a smooth online shopping experience.',
+      liveUrl: 'https://swiftshop-client.vercel.app',
+      githubUrl: 'https://github.com/Mafikul5320/SwiftShop-Client',
+      challenges: [
+        'Building a secure cart and checkout flow',
+        'Integrating JWT authentication ',
+        'Handling product CRUD operations with admin privileges',
+        'Managing real-time stock updates and order tracking'
+      ],
+      improvements: [
+        'Add AI-powered product recommendations',
+        'Implement multiple payment gateway options',
+        'Introduce wishlist & product review features',
+        'Add sales analytics with charts and insights'
+      ]
+    },
+    {
+      id: 4,
       title: 'NewsWeek – News & Articles Platform',
       shortDescription: "NewsWeek is a full-stack news platform with article publishing, premium subscriptions, role-based access, and admin analytics dashboards.",
       image: 'https://i.ibb.co.com/d0jntyg6/Screenshot-2025-08-25-202532.png',
@@ -96,30 +120,7 @@ const Projects = () => {
         'Push Notifications – Notify users of trending and breaking news instantly'
       ]
     },
-    {
-      id: 4,
-      title: 'SwiftShop – Modern E-commerce Platform',
-      shortDescription: 'SwiftShop is a full-stack e-commerce platform featuring product management, secure authentication, cart & checkout system, and admin dashboard with analytics.',
-      image: 'https://i.ibb.co.com/rGgRStXZ/Screenshot-2025-09-06-155642.png',
-      tags: ['React', 'Node.js', 'MongoDB', 'JWT', 'Tailwind CSS', 'Express.js'],
-      category: 'Full-Stack',
-      tech: ['React', 'Node.js', 'MongoDB', 'Firebase', 'Tailwind CSS'],
-      description: 'SwiftShop is a complete e-commerce solution where users can browse products, add items to cart, and securely checkout. It includes an admin dashboard for managing products, orders, and users.JWT Authentication and protected routes, while MongoDB ensures scalable product and order storage. With a clean UI and responsive design, SwiftShop provides a smooth online shopping experience.',
-      liveUrl: 'https://swiftshop-client.vercel.app',
-      githubUrl: 'https://github.com/Mafikul5320/SwiftShop-Client',
-      challenges: [
-        'Building a secure cart and checkout flow',
-        'Integrating JWT authentication ',
-        'Handling product CRUD operations with admin privileges',
-        'Managing real-time stock updates and order tracking'
-      ],
-      improvements: [
-        'Add AI-powered product recommendations',
-        'Implement multiple payment gateway options',
-        'Introduce wishlist & product review features',
-        'Add sales analytics with charts and insights'
-      ]
-    }
+
   ];
 
   const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => (
