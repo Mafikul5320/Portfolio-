@@ -52,12 +52,9 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
                 <div>
                   <h2 className="text-lg font-bold text-gray-900 dark:text-white">Mafikul Islam</h2>
-                  <p className="text-xs text-purple-600 dark:text-purple-400 font-medium uppercase tracking-wider">Full-Stack Developer</p>
+                  <p className="text-xs text-purple-600 dark:text-purple-400 font-medium uppercase tracking-wider pt-2">Full-Stack Developer</p>
                 </div>
               </div>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
@@ -129,7 +126,7 @@ const Footer = () => {
                     <Mail className="w-3.5 h-3.5 text-gray-400 group-hover:text-purple-400 transition-colors" />
                   </span>
                   <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-purple-400 transition-colors break-all">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-purple-400 transition-colors break-all">
                       mdmafikul.islam53@gmail.com
                     </p>
                   </div>
@@ -165,9 +162,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="border-t border-gray-200/50 dark:border-gray-700/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-gray-400 dark:text-gray-500 text-xs flex items-center gap-1.5 flex-wrap justify-center">
-              © {new Date().getFullYear()} Mafikul Islam. Crafted with
-              <Heart className="w-3 h-3 text-red-400 fill-current inline animate-pulse" />
-              and lots of ☕
+              © {new Date().getFullYear()} Mafikul Islam
             </p>
 
             {/* Back to Top */}
