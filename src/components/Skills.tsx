@@ -1,15 +1,18 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { Code, Palette, Server, Settings, Zap } from 'lucide-react';
+import { Palette, Server, Settings, Zap } from 'lucide-react';
 import {
-  motion,
+  motion as m,
   AnimatePresence,
   useMotionValue,
   useSpring,
   useTransform,
   useMotionTemplate,
 } from 'framer-motion';
+
+// Fix React 19 type incompatibility with framer-motion v10
+const motion = m as any;
 
 interface Skill {
   name: string;
@@ -130,7 +133,7 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
               style={{ backgroundColor: accentColor }}
             />
 
-            {/* Floating Icon Wrapper */}
+            {/* Floating Icon Wrapper with Glassmorphism */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{
@@ -140,18 +143,23 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
                 delay: index * 0.2,
               }}
               style={{
-                boxShadow: `0 0 25px -2px ${accentColor}75, inset 0 0 12px ${accentColor}40`,
+                boxShadow: `0 8px 32px 0 rgba(0, 0, 0, 0.2), 0 0 25px -2px ${accentColor}50, inset 0 1px 1px 0 rgba(255, 255, 255, 0.35)`,
               }}
-              className={`relative z-10 w-16 h-16 p-2.5 bg-white/80 dark:bg-gray-800/80 bg-gradient-to-br ${skill.color || ''} border border-gray-200/80 dark:border-white/15 group-hover:border-purple-400/60 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-all duration-300 backdrop-blur-md`}
+              className="relative z-10 w-20 h-20 p-2.5 bg-white/25 dark:bg-white/[0.08] backdrop-blur-xl border border-white/40 dark:border-white/25 group-hover:border-white/50 dark:group-hover:border-white/40 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition-all duration-300"
             >
+              {/* Subtle Glass Specular Reflection */}
+              <div
+                className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-white/25 via-white/[0.05] to-transparent opacity-80"
+              />
+
               {/* Subtle Top Glow Overlay on Icon */}
               <div
-                className="pointer-events-none absolute inset-0 rounded-2xl opacity-35 group-hover:opacity-75 transition-opacity duration-300"
+                className="pointer-events-none absolute inset-0 rounded-2xl opacity-25 group-hover:opacity-60 transition-opacity duration-300"
                 style={{
-                  background: `radial-gradient(circle at 50% 0%, ${accentColor}80, transparent 70%)`,
+                  background: `radial-gradient(circle at 50% 0%, ${accentColor}60, transparent 70%)`,
                 }}
               />
-              <div className="relative z-10 w-10 h-10 flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain [&>svg]:w-full [&>svg]:h-full">
+              <div className="relative z-10 w-full h-full flex items-center justify-center [&>img]:w-full [&>img]:h-full [&>img]:object-contain [&>svg]:w-full [&>svg]:h-full drop-shadow-sm">
                 {skill.icon}
               </div>
             </motion.div>
@@ -169,19 +177,6 @@ const SkillCard = ({ skill, index }: { skill: Skill; index: number }) => {
             <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">
               {skill.description}
             </p>
-
-            {/* Bottom Animated Energy Line */}
-            <div className="mt-3 h-[2px] w-full bg-gray-200/70 dark:bg-gray-600/50 rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: '25%' }}
-                whileInView={{ width: '45%' }}
-                className="h-full rounded-full group-hover:!w-full transition-all duration-500 ease-out"
-                style={{
-                  background: `linear-gradient(90deg, ${accentColor}, #a855f7)`,
-                  boxShadow: `0 0 12px ${accentColor}`,
-                }}
-              />
-            </div>
           </div>
         </div>
 
@@ -522,34 +517,29 @@ const Skills = () => {
 
         {/* Infinite Animated Tech Stack Marquee Ticker */}
         <div className="mt-16 pt-8 border-t border-gray-200/50 dark:border-gray-700/50 relative overflow-hidden">
-          <div className="flex overflow-hidden select-none">
-            <motion.div
-              animate={{ x: ['0%', '-50%'] }}
-              transition={{
-                duration: 28,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-              className="flex flex-nowrap gap-4 min-w-max"
-            >
+          <div className="flex overflow-hidden select-none [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <div className="animate-marquee flex flex-nowrap gap-4 min-w-max py-2">
               {[...allSkills, ...allSkills].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/80 dark:bg-gray-800/80 border border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm hover:border-purple-500/40 transition-colors shadow-sm"
+                  className="group/pill flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/70 dark:bg-white/[0.05] border border-gray-200/70 dark:border-white/10 backdrop-blur-xl hover:border-purple-500/50 dark:hover:border-purple-400/50 hover:bg-white dark:hover:bg-white/[0.1] hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-purple-500/10 cursor-pointer"
                 >
-                  <div className="w-6 h-6 flex items-center justify-center scale-75">
+                  <div className="w-6 h-6 flex items-center justify-center scale-90 group-hover/pill:scale-105 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300 text-sm font-medium whitespace-nowrap">
+                  <span className="text-gray-800 dark:text-gray-200 text-sm font-semibold whitespace-nowrap group-hover/pill:text-purple-600 dark:group-hover/pill:text-purple-300 transition-colors">
                     {item.name}
                   </span>
                   <span
-                    className="w-1.5 h-1.5 rounded-full"
-                    style={{ backgroundColor: item.accent || '#a855f7' }}
+                    className="w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover/pill:scale-125"
+                    style={{
+                      backgroundColor: item.accent || '#a855f7',
+                      boxShadow: `0 0 8px ${item.accent || '#a855f7'}`,
+                    }}
                   />
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
